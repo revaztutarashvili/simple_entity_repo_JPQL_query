@@ -55,6 +55,7 @@ public void tester(){
         List<Building> all = buildingRepository.findAll();
         buildingRepository.deleteById(1L);
         System.out.println("Tester3:  " + all);
+        buildingRepository.searchByAddressPart("aa");
 
     }
 //    @PostConstruct
