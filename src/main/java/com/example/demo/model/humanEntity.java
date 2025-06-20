@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "humanEntity")
 public class humanEntity {
@@ -26,4 +28,7 @@ public class humanEntity {
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany
+    private List<buildingEntity> buildingEntity;
 }

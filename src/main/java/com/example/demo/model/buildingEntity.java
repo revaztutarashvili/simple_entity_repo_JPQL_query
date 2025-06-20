@@ -20,6 +20,8 @@ public class buildingEntity {
     private int entrance;
     @Column()
     private int capacity;
+    @ManyToOne
+    private humanEntity humanEntity;
 
 
 
