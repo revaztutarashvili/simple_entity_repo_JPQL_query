@@ -12,16 +12,21 @@ public class buildingEntity {
 
     @Column()
     private int floor;
+
     @Column()
     private boolean hasParking;
+
     @Column()
     private String address;
+
     @Column()
     private int entrance;
+
     @Column()
     private int capacity;
+
     @ManyToOne
-    private humanEntity humanEntity;
+    private humanEntity humanEnt;
 
 
 

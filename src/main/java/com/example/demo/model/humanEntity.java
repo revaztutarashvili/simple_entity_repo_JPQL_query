@@ -30,5 +30,5 @@ public class humanEntity {
     private String address;
 
     @OneToMany
-    private List<buildingEntity> buildingEntity;
+    private List<buildingEntity> buildingEnt;
 }
