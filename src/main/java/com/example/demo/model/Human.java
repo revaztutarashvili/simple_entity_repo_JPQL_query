@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "humanEntity")
-public class humanEntity {
+//@Table(name = "humanEntity")
+public class Human {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
@@ -14,21 +14,22 @@ public class humanEntity {
     @Column(unique = true)
     private long identityNum;
 
-    @Column(name = "personName")
+    @Column(name = "personName", nullable = false)
     private String name;
 
-    @Column(name = "Sex")
+    @Column(name = "Sex", updatable = true)
     private String sex;
 
-    @Column(name = "personAge")
+    @Column(name = "personAge", updatable = false)
     private int age;
 
-    @Column(name = "weight")
+    @Column(name = "weight", updatable = true)
     private long weight;
 
-    @Column(name = "address")
+    @Column(name = "address", unique = false)
     private String address;
 
     @OneToMany
-    private List<buildingEntity> buildingEnt;
+
+    private List<Building> Building;
 }

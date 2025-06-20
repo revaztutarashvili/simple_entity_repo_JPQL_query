@@ -3,30 +3,31 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "buildingEntity")
-public class buildingEntity {
+//@Table(name = "buildingEntity")
+public class Building {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID")
     private long id;
 
-    @Column()
+    @Column(name = "floors", unique = false)
     private int floor;
 
-    @Column()
+    @Column(name = "parking_Y/N", updatable = true)
     private boolean hasParking;
 
-    @Column()
+    @Column(name = "address", unique = false)
     private String address;
 
-    @Column()
+    @Column(name = "entrance_Qntt")
     private int entrance;
 
-    @Column()
+    @Column(name = "Capacity")
     private int capacity;
 
     @ManyToOne
-    private humanEntity humanEnt;
+    @JoinColumn(name = "OwnerId")
+    private Human Human;
 
 
 
