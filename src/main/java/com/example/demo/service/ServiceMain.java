@@ -5,6 +5,7 @@ import com.example.demo.model.Human;
 import com.example.demo.repository.BuildingRepository;
 import com.example.demo.repository.HumanRepository;
 import jakarta.annotation.PostConstruct;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -52,9 +53,22 @@ public void tester(){
 
         buildingRepository.save(building);
         List<Building> all = buildingRepository.findAll();
+        buildingRepository.deleteById(1L);
         System.out.println("Tester3:  " + all);
 
     }
+//    @PostConstruct
+//    public void tester4 (){
+//        Human human = new Human();
+//        human.setName("beso");
+//        human.setSex("male");
+//        human.setAge(21);
+//        human.setIdentityNum(1293333L);
+//        List<Human> all = humanRepository.findAll();
+//        System.out.println("find created human:  " + all);
+//        humanRepository.deleteAll();
+//        System.out.println("find after delete:  " + all);
+//    }
 
 }
 
