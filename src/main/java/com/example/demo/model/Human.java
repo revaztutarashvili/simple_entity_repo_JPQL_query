@@ -8,7 +8,7 @@ import java.util.List;
 //@Table(name = "humanEntity")
 public class Human {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(unique = true)
